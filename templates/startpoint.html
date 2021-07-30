@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirstIsZero</title>
+    <style>
+        html {background-color: aliceblue;
+            color: navy;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+        h1 {color: black; 
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h3 {color: black;
+        text-align: right;
+        background-color: lightcoral;
+        padding-right: 1.5rem;
+        }
+
+        div#pic {display: inline;
+                margin: 5em;
+                } 
+    </style>
+</head>
+<body>
+    <h1>Codes in codes</h1>
+    <h3>Page 1</h3>
+    <div class="content">
+        <p>Hello, this is a game for those, who know HTML, CSS and JavaScript. You have found the first page and first puzzle. If you want to go further, you need to find a 6-digit number.</p>
+        <p>Regarding this first puzzle, the cat will help you in finding the number, you are looking for.</p>
+    </div>
+    <div>
+        <div id="pic">
+            <img src="static/IMG_first/937451.jpg" width="100rem" alt="Something happened, here should be a picture.">
+        </div>
+    </div>
+    <div>
+        <form action="/" method="post" datatype="text">
+            <label for="code">Solution: </label>
+            <input id="code" name="first">
+            <button>Submit</button>
+        </form>
+        {% if message != null %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+    </body>
+    </html>
