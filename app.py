@@ -11,12 +11,12 @@ def first_page():
     if request.method == "GET":
         return render_template("startpoint.html")
     elif request.method == "POST":
-        code = request.form.get("first")
-        if util.verify_code(code, util.gethashes("first")):
-            session["reached"] = 2
-            return redirect("/second")
-        else:
-            return render_template("startpoint.html", message="Not correct, the 6-digit number is something else.")
+        if "first" in request.form:
+            code = request.form.get("first")
+            if util.verify_code(code, util.gethashes("first")):
+                session["reached"] = 2
+                return redirect("/second")
+        return render_template("startpoint.html", message="Not correct, the 6-digit number is something else.")
 
 
 @app.route('/second', methods=["GET", "POST"])
