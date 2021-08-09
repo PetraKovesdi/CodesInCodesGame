@@ -30,7 +30,7 @@ def first_page():
 
 
 @app.route('/<page>', methods=["GET", "POST"])
-def second_page(page):
+def mapped_page(page):
     if request.method == "GET":
         if page in PAGEMAP \
                 and "reached" in session \
