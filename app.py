@@ -32,11 +32,14 @@ def first_page():
 @app.route('/<page>', methods=["GET", "POST"])
 def second_page(page):
     if request.method == "GET":
-        if page in PAGEMAP:
-            if "reached" in session and session["reached"] >= PAGEMAP.get(page).get("session"):
-                return f"{page} page is under development."
+        if page in PAGEMAP \
+                and "reached" in session \
+                and session["reached"] >= PAGEMAP.get(page).get("session"):
+
+            return f"{page} page is under development."
         else:
             return redirect("/")
+
     if request.method == "POST":
         return redirect("/")
 
