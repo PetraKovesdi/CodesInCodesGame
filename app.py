@@ -36,12 +36,22 @@ def second_page(page):
                 and "reached" in session \
                 and session["reached"] >= PAGEMAP.get(page).get("session"):
 
-            return f"{page} page is under development."
+            return render_template(f"{page}.html")
         else:
             return redirect("/")
 
     if request.method == "POST":
-        return redirect("/")
+        if "reached" not in session or session["reached"] < PAGEMAP.get(page).get("session"):
+            return f"<p>Nice try, here is a <a href='/'>link</a> back.</p>"
+        if page in request.form:
+            code = request.form.get(page)
+            if util.verify_code(code, util.gethashes(page)):
+                # if higher number is already in session, it will not decrease it to prev number
+                if session["reached"] == PAGEMAP.get(page).get("session"):
+                    session["reached"] += 1
+                return redirect(f"/{PAGEMAP.get(page).get('nextPage')}")
+        return render_template(f"{page}.html", message="Not correct, the 6-digit number is something else.")
+
 
 
 if __name__ == '__main__':

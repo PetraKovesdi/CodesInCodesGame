@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second is one</title>
+    <link rel="stylesheet" href="/static/CSS_second/whichOne.css">
+</head>
+<body>
+    <div class = "title" >
+        <h1>Codes in codes</h1>
+        <h3>Page 2</h3>
+    </div>
+    <p>Here are some squares, that look the same, but there is and odd-one-out. Finding it will lead you to the next puzzle.</p>
+    <div>
+        <div id="colordiv-1"></div>
+        <div id="colordiv-2"></div>
+        <div id="colordiv-3"></div>
+        <div id="colordiv-4"></div>
+        <div id="colordiv-5"></div>
+    </div>
+    <div>
+        <form action="/second" method="post" datatype="text">
+            <label for="code">Solution: </label>
+            <input id="code" name="second">
+            <button>Submit</button>
+        </form>
+        {% if message != null %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
