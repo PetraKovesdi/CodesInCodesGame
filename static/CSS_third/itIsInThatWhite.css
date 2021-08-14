@@ -1,0 +1,65 @@
+html {background-color: white;
+    color: darkslateblue;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+div.title {background-image: url(IMG/Squares.jpg);
+            background-size: 10%;}
+h1 {color: white; 
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+padding-top: 0.75rem;}
+h3 {color: black;
+text-align: right;
+margin: 2rem;
+background-color:dodgerblue;
+padding-right: 1.5rem;}
+div.box {display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    margin-top: 5px;
+    padding: 0px;
+    border: 0px;
+    text-align: center;
+    color: black;}
+span {color: white;}
+
+div.box-group div:nth-child(odd) {background-color: rgb(255, 139, 251);}
+div.box-group div:nth-child(even) {background-color: rgb(0, 255, 255);}
+div.box-group div:nth-child(4) {background-color: lightskyblue;}
+div.box-group div:nth-child(27) {background-color: magenta;}
+div.box-group div:nth-child(9) {background-color: lightseagreen;}
+div.box-group div:nth-child(13) {background-color: skyblue;}
+div.box-group div:nth-child(23) {background-color: lightcoral;}
+div.box-group div:nth-child(19) {background-color: white;}
+div.box-group div:nth-child(28) {background-color: lightsteelblue;}
+div.box-group div:nth-child(1) {background-color: lightsteelblue;}
+div.box-group div:nth-child(32) {background-color: orchid;}
+div.box-group div:nth-child(8) {background-color: pink;}
+div.box-group div:nth-child(12) {background-color: turquoise;}
+div.box-group div:nth-child(19) { visibility:     hidden;}
+div.box-group div:nth-child(30) {background-color: pink;}
+div.box-group div:nth-child(25) {background-color: silver;}
+div.box-group div:nth-child(10) {background-color: mediumaquamarine;}
+div.box-group div:nth-child(17) {background-color: skyblue;}
+div.box-group div:nth-child(18) {background-color: violet;}
+div.box-group div:nth-child(15) {background-color: palevioletred}
+div.box-group div:nth-child(24) {background-color: turquoise}
+div.box-group div:nth-child(21) {background-color: lightseagreen;}
+div.box-group div:nth-child(11) {background-color: lightpink;}
+div.box-group div:nth-child(31) {background-color: lightskyblue}
+div.box-group div:nth-child(29) {background-color: lightpink}
+
+#div-01 {background-color: white;} 
+#div-02 {background-color: white;}
+#div-03 {background-color: white;}
+#div-04 {background-color: white;}
+#div-05 {background-color: white;}
+#div-06 {background-color: white;}
+#div-07 {background-color: white;}
+#div-08 {background-color: white;}
+#div-09 {background-color: white;}
+#div-10 {background-color: white;}
+#div-11 {background-color: white;}
+#div-12 {background-color: white;}
+#div-13 {background-color: white;}
+#div-14 {background-color: white;}
+#div-15 {background-color: white;}

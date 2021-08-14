@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundsABitCrazy</title>
+    <link rel="stylesheet" href="/static/CSS_third/itIsInThatWhite.css">
 </head>
+
 <body>
-<h3>Not ready yet.</h3>
-</body>
+    <div class="title">
+        <h1>Codes in codes</h1>
+        <h3>Page 3</h3>
+    </div>
+    <div class="text">
+        <p>It seems, you are getting the hang of it. :-) For solving the third puzzle look for the number in the white
+            square.</p>
+            <div>
+                <form action="/third" method="post" datatype="text">
+                    <label for="code">Solution: </label>
+                    <input id="code" name="third">
+                    <button>Submit</button>
+                </form>
+                {% if message != null %}
+                    <p>{{ message }}</p>
+                {% endif %}
+            <br>
+            </div>
+    </div>
+    <div class="box-group">
+                <div class="box"><br>923334</div>
+                <div class="box"><br>287912</div>
+                <div class="box" id="div-01"><br><span>xxx</span></div>
+                <div class="box"><br>327411</div>
+                <div class="box"><br>830854</div>
+                <div class="box"><br>540062</div>
+                <div class="box" id="div-02"><br><span>xxx</span></div>
+                <div class="box" id="div-03"><br><span>xxx</span></div>
+                <div class="box"><br>405734</div>
+                <div class="box" id="div-04"><br><span>xxx</span></div>
+                <div class="box"><br>778536</div>
+                <div class="box" id="div-05"><br><span>xxx</span></div>
+                <div class="box" id="div-06"><br><span>xxx</span></div>
+                <div class="box" id="div-07"><br><span>xxx</span></div>
+                <div class="box"><br>965896</div>
+                <div class="box"><br>706697</div>
+                <div class="box" id="div-08"><br><span>xxx</span></div>
+                <div class="box"><br>113867</div>
+                <div class="box"><br>798983</div>
+                <div class="box" id="div-09"><br><span>xxx</span></div>
+                <div class="box"><br>985277</div>
+                <div class="box"><br>981061</div>
+                <div class="box" id="div-10"><br><span>xxx</span></div>
+                <div class="box" id="div-11"><br><span>xxx</span></div>
+                <div class="box"><br>796175</div>
+                <div class="box"><br>116336</div>
+                <div class="box" id="div-12"><br><span>xxx</span></div>
+                <div class="box"><br>687854</div>
+                <div class="box" id="div-13"><br><span>xxx</span></div>
+                <div class="box" id="div-14"><br><span>xxx</span></div>
+                <div class="box" id="div-15"><br><span>xxx</span></div>
+                <div class="box"><br>786527</div>
+                                
+    </div>
+    </body>
 </html>
