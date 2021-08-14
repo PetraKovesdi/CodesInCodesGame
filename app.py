@@ -31,18 +31,16 @@ def first_page():
 
 @app.route('/<page>', methods=["GET", "POST"])
 def mapped_page(page):
-    if request.method == "GET":
-        if page in PAGEMAP \
-                and "reached" in session \
-                and session["reached"] >= PAGEMAP.get(page).get("session"):
+    # Both for GET and POST requests
+    if page not in PAGEMAP \
+                or "reached" not in session \
+                or session["reached"] < PAGEMAP.get(page).get("session"):
+        return redirect("/")
 
-            return render_template(f"{page}.html")
-        else:
-            return redirect("/")
+    if request.method == "GET":
+        return render_template(f"{page}.html")
 
     if request.method == "POST":
-        if "reached" not in session or session["reached"] < PAGEMAP.get(page).get("session"):
-            return f"<p>Nice try, here is a <a href='/'>link</a> back.</p>"
         if page in request.form:
             code = request.form.get(page)
             if util.verify_code(code, util.gethashes(page)):
