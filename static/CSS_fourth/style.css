@@ -1,0 +1,65 @@
+html {
+    background-color: lightcyan;
+    color: midnightblue;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(IMG_fourth/SquaresInSquares.jpg);
+    background-size: 3%;
+}
+
+body {
+    padding: 10px
+}
+
+div.title {
+    background-color: #FFEBA0;
+}
+
+div.colored-background {
+    background-color: lightgoldenrodyellow;
+    padding: 1px;
+    max-width: 80%
+}
+
+div.form {
+    margin: 20px
+}
+
+div.colored-background, div.form, div.btn-group {
+    margin-left: 5%
+}
+
+div.colored-background p, div.colored-background div form {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+div.hidden{
+    visibility: hidden;
+}
+
+h1 {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 0.75rem;
+}
+
+h3 {
+    color: black;
+    text-align: right;
+    margin: 2rem;
+    background-color: lightcoral;
+    padding-right: 1.5rem;
+}
+
+
+button.first {
+    color: blue;
+    background-color: aqua;
+}
+
+button.second {
+    color: blue;
+    background-color: aqua;
+    display: none;
+}

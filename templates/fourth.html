@@ -1,1 +1,46 @@
-<h3>Not ready yet</h3>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How indexing is done</title>
+    <link rel="stylesheet" href="/static/CSS_fourth/style.css">
+    <script src="/static/JS_fourth/theRightAnswer.js" defer></script>
+</head>
+
+<body>
+        <div class="title">
+            <h1>Codes in codes</h1>
+            <h3>Page 4</h3>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="first">Curious?</button>
+            <button type="button" class="second">Preferred the previous color?</button>
+        </div>
+        <div class="colored-background">
+            <p>Going further, having more fun. As for the clue for this fourth puzzle, here I can check, if I know the right answer:</p>
+        </div>
+        <div class="form">
+        <form>
+        <label for="number">The Number:</label>
+        <input id="number" name="number" type="number">
+        <button type="button" id= "solution-query">IsItTheRightAnswer?</button>
+        </form>
+        </div>
+        <div class="colored-background solution-submission hidden">
+                <div>
+                    <form action="/fourth" method="post" datatype="text">
+                        <label for="code">Solution: </label>
+                        <input id="code" name="fourth">
+                        <button>Submit</button>
+                    </form>
+                    {% if message != null %}
+                        <p>{{ message }}</p>
+                    {% endif %}
+                </div>
+        </div>
+
+</body>
+
+</html>
