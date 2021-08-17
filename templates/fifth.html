@@ -1,1 +1,52 @@
-<h3>Not ready yet</h3>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True or False</title>
+    <link rel="stylesheet" href="/static/CSS_fifth/style.css">
+    <script src="/static/JS_fifth/somethingMissing.js" defer></script>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Codes in codes</h1>
+        <h3>Page 5</h3>
+    </div>
+    <div class="text description">
+        <div class="wrapper">
+            <p>From now on you will not find the 6-digit number written directly in the code. It would be too easy for you
+                by now.
+                <br>
+                But do not worry, these 7 remaining puzzles are not that terribly difficult either.
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <p>
+                As for the key for this fifth puzzle you should answer this first:
+                <span>
+                    Take a number. Double it. Subtract 75. Add 125. Divide by 2. Subtract your original number. What number
+                    have you now?
+                </span>
+                <br>Then you need to find out, from where it is missing.
+            </p>
+        </div>
+    </div>
+    <div class="text solution-field">
+
+        <form action="/fifth" method="post" datatype="text">
+            <label for="code">Solution: </label>
+            <input id="code" name="fifth">
+            <button>Submit</button>
+        </form>
+        {% if message != null %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
