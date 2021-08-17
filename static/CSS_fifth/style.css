@@ -1,7 +1,8 @@
 html {
-    background-color: ghostwhite;
+    background-color: #FFD4AC;
     background-image: url("IMG_fifth/SquaresforBackground.jpg");
     background-size: 25%;
+    background-position: right;
     background-repeat: repeat-y;
     color: darkslateblue;
     font-family: Arial, Helvetica, sans-serif;
