@@ -1,0 +1,75 @@
+/* Downloaded from https://fonts.google.com */
+@font-face {
+  font-family: "Inconsolata";
+  src: url("lib/static/Inconsolata/Inconsolata-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Inconsolata-Bold";
+  src: url("lib/static/Inconsolata/Inconsolata-Bold.ttf");
+}
+
+
+html {
+    background-color: black;
+    background-image: url("IMG_sixth/ForBackground.jpg");
+    background-size: 7%;
+    background-repeat: repeat-y;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.title {
+    background-image: url("IMG_sixth/ForBackground.jpg");
+    background-size: 5%;
+}
+
+div.intitlefield {
+    background-color: rgba(0, 0, 255, 0.3);
+    margin-left: 5%;
+    margin-right: 5%
+}
+
+h1 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 1rem;
+    padding-top: 0.75rem;
+}
+
+h3 {
+    color: white;
+    text-align: right;
+    margin: 2rem;
+    background-color: rgba(255, 0, 0, 0.75);
+    padding-right: 1.5rem
+}
+
+div.text {
+    background-color: #0000FF;
+    font-size: 17px;
+    margin-right: 5%;
+    margin-left: 10%;
+    padding: 15px;
+    font-family: "Inconsolata", Arial, Helvetica, sans-serif;
+}
+
+legend {
+    text-align: center;
+    color: #FF0000;
+    font-family: "Inconsolata-Bold", "Inconsolata", Arial, Helvetica, sans-serif;
+}
+
+fieldset {
+    padding: 20px;
+}
+
+#span-01 {
+    background-color: white;
+    color: navy;
+}
+
+#span-02 {
+    background-color: white;
+    color: navy;
+}

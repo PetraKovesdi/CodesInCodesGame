@@ -1,1 +1,40 @@
-<h3>Not ready yet</h3>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean knows</title>
+    <link rel="stylesheet" href="/static/CSS_sixth/style.css">
+    <script src="/static/JS_sixth/theFixerNeeded.js" defer></script>
+</head>
+
+<body>
+    <div class="title">
+        <div class="intitlefield">
+            <h1>Codes in codes</h1>
+            <h3>Page 6</h3>
+        </div>
+    </div>
+    <div class="text">
+        <fieldset>
+        <legend>Error message!</legend>
+        <p><span id="span-01" title="3 in total">Some errors</span> are to be corrected <span id="span-02"
+                title="JS code">in the code.</span>
+            This will lead you to the solution of this puzzle by the way.
+
+        <form action="/sixth" method="post" datatype="text">
+            <label for="code">Solution: </label>
+            <input id="code" name="sixth">
+            <button>Submit</button>
+        </form>
+        {% if message != null %}
+            <p>{{ message }}</p>
+        {% endif %}
+        </fieldset>
+    </div>
+
+
+</body>
+
+</html>

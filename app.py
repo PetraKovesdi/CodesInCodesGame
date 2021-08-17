@@ -10,7 +10,8 @@ PAGEMAP = {
     "third": {"session": 3, "nextPage": "fourth", "code": util.HASHES["third"]},
     "fourth": {"session": 4, "nextPage": "fifth", "code": util.HASHES["fourth"]},
     "fifth": {"session": 5, "nextPage": "sixth", "code": util.HASHES["fifth"]},
-    "sixth": {"session": 6, "nextPage": "notcomplete", "code": ""}
+    "sixth": {"session": 6, "nextPage": "seventh", "code": util.HASHES["sixth"]},
+    "seventh": {"session": 7, "nextPage": "notcomplete", "code": ""}
 }
 
 
