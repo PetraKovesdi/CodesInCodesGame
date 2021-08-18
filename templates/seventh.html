@@ -1,1 +1,63 @@
-<h3>Not ready yet</h3>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True is not empty</title>
+    <link rel="stylesheet" href="/static/CSS_seventh/myColors.css">
+    <script src="/static/JS_seventh/combinations.js" defer></script>
+</head>
+
+<body>
+    <div class="title">
+        <div class="titlefield">
+            <h1>Codes in codes</h1>
+            <h3>Page 7</h3>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <p>
+            <span title="720">6!</span> means a lot of possible <em title="combinations.js">combinations</em>.
+        </p>
+        <p>
+            But here is a keyword: CYGNUS.
+        </p>
+        <p>
+            And here are these colorful squares again.
+        </p>
+
+
+        <div id="colordiv-container">
+            <div id="colordiv-1"></div>
+            <div id="colordiv-2"></div>
+            <div id="colordiv-3"></div>
+            <div id="colordiv-4"></div>
+            <div id="colordiv-5"></div>
+            <div id="colordiv-6"></div>
+        </div>
+
+        <p>
+            Combine these and you will have the solution.
+        </p>
+
+        <div class="solution-field">
+
+            <form action="/seventh" method="post" datatype="text">
+                <label for="code">Solution: </label>
+                <input id="code" name="seventh">
+                <button>Submit</button>
+            </form>
+            {% if message != null %}
+                <p>{{ message }}</p>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
