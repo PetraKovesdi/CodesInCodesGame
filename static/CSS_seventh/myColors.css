@@ -1,116 +1,95 @@
 :root {
-    --CORAL-72: #FA9B6D;
-    --PALEGOLD-41: #FFE9AA;
-    --PALEYELLOW-35: #F9F892;
-    --PALEBLUE-57: #AFEEEE;
-    --ROSE-85: #FFBBEE;
-    --LAVENDER-80: #E6E6FA;
+  --CORAL-72: #fa9b6d;
+  --PALEGOLD-41: #ffe9aa;
+  --PALEYELLOW-35: #f9f892;
+  --PALEBLUE-57: #afeeee;
+  --ROSE-85: #ffbbee;
+  --LAVENDER-80: #e6e6fa;
 }
-
 
 html {
-    height: 100%;
-    background-color: black;
-    color: white;
-    background-image: url("IMG_seventh/ryan-hutton-Jztmx9yqjBw-unsplash.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  background-color: black;
+  color: white;
+  background-image: url("IMG_seventh/ryan-hutton-Jztmx9yqjBw-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-
 body {
-    height: 100%;
-    padding: 10px;
+  height: 100%;
+  padding: 10px;
 }
 
 div.title {
-    background-color: rgba(0,0,50,0.5);
+  background-color: rgba(0, 0, 50, 0.5);
 }
 
 h1 {
-    color: rgb(150,200,255);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: 0.75rem;
+  color: rgb(150, 200, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-top: 0.75rem;
 }
 
 h3 {
-    color: #7DAEFD;
-    text-align: right;
-    background-color: rgba(200,150,255,0.2);
-    margin: 2rem;
-    padding-right: 1.5rem;
+  color: #7daefd;
+  text-align: right;
+  background-color: rgba(200, 150, 255, 0.2);
+  margin: 2rem;
+  padding-right: 1.5rem;
 }
 
 div.container {
-    background-color: rgba(200,255,255,0.1);
-    font-size: 18px;
-    margin-right: 5%;
-    margin-left: 5%;
-    padding: 15px;
-
+  background-color: rgba(200, 255, 255, 0.1);
+  font-size: 18px;
+  margin-right: 5%;
+  margin-left: 5%;
+  padding: 15px;
 }
 
-div.container p, div.container form {
-    margin: 20px;
+div.container p,
+div.container form {
+  margin: 20px;
 }
 
 div.container p:first-child {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
-
 
 div.solution-field {
-    margin-top: 50px;
-    text-align: center;
+  margin-top: 50px;
+  text-align: center;
 }
 
+div#colordiv-container div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
 
 div#colordiv-1 {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    background-color: var(--CORAL-72)
+  background-color: var(--CORAL-72);
 }
 
 div#colordiv-2 {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    background-color: var(--PALEGOLD-41)
+  background-color: var(--PALEGOLD-41);
 }
 
 div#colordiv-3 {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    background-color: var(--PALEYELLOW-35)
+  background-color: var(--PALEYELLOW-35);
 }
 
 div#colordiv-4 {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    background-color: var(--PALEBLUE-57)
+  background-color: var(--PALEBLUE-57);
 }
 
 div#colordiv-5 {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    background-color: var(--ROSE-85)
+  background-color: var(--ROSE-85);
 }
 
 div#colordiv-6 {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    margin: 10px;
-    background-color: var(--LAVENDER-80)
+  background-color: var(--LAVENDER-80);
 }
