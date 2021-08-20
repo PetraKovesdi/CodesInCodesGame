@@ -1,1 +1,47 @@
-<h3>Not ready yet</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>And None is False</title>
+    <link rel="stylesheet" href="/static/CSS_eighth/style.css">
+    <script type="module" src="/static/JS_eighth/decryptRailFence.js"></script>
+    <script src="/static/JS_eighth/exceptionalNumbers.js" defer></script>
+    <script type="module" src="/static/JS_eighth/main.js" defer></script>
+</head>
+<body>
+
+    <div id="title-field">
+        <h1>Codes in codes</h1>
+        <h3>Page 8</h3>
+    </div>
+
+    <div id="container">
+
+        <div id="buttons-field">
+            <button id="get-data">Show content</button>
+            <button id="decrypt-data" class="hidden">Decrypt text</button>
+        </div>
+
+        <div id="content-field" class="text hidden">
+            <p class="hidden">
+            </p>
+        </div>
+
+        <div id="solution-field" class="text hidden">
+
+            <form action="/eighth" method="post" datatype="text">
+                <label for="code">Solution: </label>
+                <input id="code" name="eighth">
+                <button>Submit</button>
+            </form>
+            {% if message != null %}
+                <p>{{ message }}</p>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>

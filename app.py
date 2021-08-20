@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, jsonify
 import util
+from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = b'19+M?W38;6S9N9=g|31NKm5xS'
@@ -12,7 +13,8 @@ PAGEMAP = {
     "fifth": {"session": 5, "nextPage": "sixth", "code": util.HASHES["fifth"]},
     "sixth": {"session": 6, "nextPage": "seventh", "code": util.HASHES["sixth"]},
     "seventh": {"session": 7, "nextPage": "eighth", "code": util.HASHES["seventh"]},
-    "eighth": {"session": 8, "nextPage": "notcomplete", "code": ""}
+    "eighth": {"session": 8, "nextPage": "ninth", "code": util.HASHES["eighth"]},
+    "ninth": {"session": 9, "nextPage": "notcomplete", "code": ""},
 }
 
 
@@ -53,6 +55,15 @@ def mapped_page(page):
                 return redirect(f"/{PAGEMAP.get(page).get('nextPage')}")
         return render_template(f"{page}.html", message="Not correct, the 6-digit number is something else.")
 
+
+@app.route("/eighth/api")
+def getData():
+    currentTime = datetime.today().strftime('%Y-%m-%d %H:%M')
+    messageContent = "The secret message: For the solution you will need to find those numbers first that will cause a special value to appear. For more look into the JS code."
+    messageContent += f" Time sent: {currentTime}"
+    message = {"message": f"{util.encryption_rail_fence(messageContent)}"}
+
+    return jsonify(message)
 
 
 if __name__ == '__main__':

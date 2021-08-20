@@ -10,8 +10,11 @@ HASHES = {
     "fourth": "$pbkdf2-sha256$29000$au2dM0aolVIqxZiTMmbMWQ$EradSGWN0FkQwNYMKvnI1WhEZQK6AczolPAyI8GG45E",
     "fifth": "$pbkdf2-sha256$29000$7r3X2ptzztm7d671PidECA$T5OSaBQas3SbN8wcWyeIEwEdUHESqkHul4G6x6UZ96I",
     "sixth": "$pbkdf2-sha256$29000$JmTMGeO8d85Z651TSiklBA$MjBcJTBxSZQBOHvqGV46R./UEf1oqyYCiaC2kkesGIk",
-    "seventh": "$pbkdf2-sha256$29000$MEZoTel9j5GSco4xhvD.Pw$lyaeXKTtSUVZ7Eu8uxua1XKbaALFRmIBBZwPnAQcQKg"
+    "seventh": "$pbkdf2-sha256$29000$MEZoTel9j5GSco4xhvD.Pw$lyaeXKTtSUVZ7Eu8uxua1XKbaALFRmIBBZwPnAQcQKg",
+    "eighth": "$pbkdf2-sha256$29000$McZYK0VIiRGiVKqVcu6dsw$7F1dP0i8sVKxKhuRV8f02KlZV5YlmnIY4ARbLXcNA5w"
 }
+
+ENCRYPTION_KEY = 5
 
 
 def gethashes(row):
@@ -34,6 +37,34 @@ def generate_key():
     random.shuffle(keyList)
     key = "".join(keyList)
     return key
+
+
+def encryption_rail_fence(message):
+    encryptionlist = []
+    for i in range(ENCRYPTION_KEY):
+        encryptionlist.append([])
+    index = 0
+    while index < len(message):
+        listNumber = 0 #Resetting for next diagonal downwards
+        reverseList = ENCRYPTION_KEY - 1 #Resetting for next diagonal upwards, - 1 to avoid adding bottom letter twice
+        while listNumber < ENCRYPTION_KEY and index < len(message):
+            letter = message[index]
+            encryptionlist[listNumber].append(letter)
+            listNumber += 1
+            index += 1
+        #reverseList > 1 to avoid adding letter to first list with 0 index twice, once downwards, once upwards
+        while reverseList > 1 and index < len(message):
+            letter = message[index]
+            encryptionlist[reverseList - 1].append(letter) #reverseList - 1 to match indices
+            reverseList -= 1
+            index += 1
+    encryptedMessage = ""
+    for raillist in encryptionlist:
+        for letter in raillist:
+            encryptedMessage += letter
+    return encryptedMessage
+
+
 
 if __name__ == '__main__':
     print("Key generated:\n" + generate_key())
