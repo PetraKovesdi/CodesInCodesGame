@@ -4,8 +4,7 @@ function messageFromDecryptionModule (){
 }
 
 
-function decryptRailFence(message){
-    let key = 5; //Hard coded for this project
+function decryptRailFence(message, key=5){
     let decryptArray = [];
     // These will be the indices for the substrings in the decryptArray,
     // this will also show the starting index for each substring
