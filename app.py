@@ -66,5 +66,80 @@ def getData():
     return jsonify(message)
 
 
+@app.route("/ninth/api", methods=["POST"])
+def handleInput():
+    # if "reached" not in session or session["reached"] < PAGEMAP.get("ninth").get("session"):
+    #    return redirect("/")
+
+
+    try:
+        currentStep = request.json.get("step").strip()
+        startingPosition = request.json.get("position").strip()
+        adjustment = request.json.get("adjustment").strip()
+        validateInputForNinthPage(currentStep, startingPosition, adjustment)
+        nextPosition = calcNextPosition(currentStep, int(startingPosition), adjustment)
+    except TypeError:
+        return jsonify({"error": "Not correct type."})
+    except ValueError:
+        return jsonify({"error": "Not correct input."})
+    except:
+        return jsonify({"error": "incorrect data"})
+
+    # First try or getting back to starting step
+    if "positionsSum" not in session or currentStep == "first":
+        session["positionsSum"] = 0
+
+    session["positionsSum"] += nextPosition
+
+    # Reaching last step
+    if currentStep == "fifth":
+
+        if util.verify_code(str(session["positionsSum"]), util.gethashes("ninth")):
+            return jsonify({currentStep: nextPosition, "solution": session["positionsSum"]})
+        else:
+            return jsonify({currentStep: nextPosition, "solution": "not correct"})
+
+    return jsonify({currentStep: nextPosition})
+
+
+def validateInputForNinthPage(currentStep, startingPosition, adjustment):
+    if startingPosition is None or adjustment is None:
+        raise ValueError
+    try:
+        int(startingPosition)
+        int(adjustment)
+    except:
+        raise TypeError
+    if currentStep not in ["first", "second", "third", "fourth", "fifth"]:
+        raise ValueError
+
+
+# adjustment handled as string for modifications for extracting actual number
+
+def calcNextPosition(currentStep, startingPosition: int, adjustment: str):
+    if currentStep == "first":
+        numberExtracted = int(adjustment[-1])
+        nextPos = startingPosition + (9 ** numberExtracted)
+    elif currentStep == "second":
+        numberExtracted = 0.5
+        if int(adjustment) % 2 == 0:
+            numberExtracted = 2
+        nextPos = startingPosition * numberExtracted
+    elif currentStep == "third":
+        numberExtracted = len(adjustment) % 6
+        nextPos = startingPosition / (6 - numberExtracted)
+    elif currentStep == "fourth":
+        numberExtracted = int(adjustment) % 3
+        nextPos = startingPosition * 3 + 999999999 * numberExtracted
+    elif currentStep == "fifth":
+        numberExtracted = int(adjustment[-2:])
+        nextPos = startingPosition - (numberExtracted + 21)
+    else:
+        raise ValueError
+    return int(nextPos)
+
+
+
+
 if __name__ == '__main__':
     app.run()

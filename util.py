@@ -11,7 +11,8 @@ HASHES = {
     "fifth": "$pbkdf2-sha256$29000$7r3X2ptzztm7d671PidECA$T5OSaBQas3SbN8wcWyeIEwEdUHESqkHul4G6x6UZ96I",
     "sixth": "$pbkdf2-sha256$29000$JmTMGeO8d85Z651TSiklBA$MjBcJTBxSZQBOHvqGV46R./UEf1oqyYCiaC2kkesGIk",
     "seventh": "$pbkdf2-sha256$29000$MEZoTel9j5GSco4xhvD.Pw$lyaeXKTtSUVZ7Eu8uxua1XKbaALFRmIBBZwPnAQcQKg",
-    "eighth": "$pbkdf2-sha256$29000$McZYK0VIiRGiVKqVcu6dsw$7F1dP0i8sVKxKhuRV8f02KlZV5YlmnIY4ARbLXcNA5w"
+    "eighth": "$pbkdf2-sha256$29000$McZYK0VIiRGiVKqVcu6dsw$7F1dP0i8sVKxKhuRV8f02KlZV5YlmnIY4ARbLXcNA5w",
+    "ninth": "$pbkdf2-sha256$29000$sHYOAQAAQIjxXovROqcUgg$ZTDBRsHkHFXhsx38olddb1GnvY1eMGeL5JZEFDL6y0Y"
 }
 
 ENCRYPTION_KEY = 5
