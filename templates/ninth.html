@@ -1,1 +1,54 @@
-<h3>Not ready yet</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return me a Promise</title>
+    <link rel="stylesheet" href="/static/CSS_ninth/style.css">
+    <link href="/static/FontAwesome/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+    <script src="/static/JS_ninth/geostationaryAdjustments.js" defer></script>
+</head>
+<body>
+
+    <div id="title-field">
+        <h1>Codes in codes</h1>
+        <h3>Page 9</h3>
+    </div>
+
+
+    <div id="content-field" class="text">
+
+        <div id="icons-field">
+            <div id="satellites">
+            <i class="fas fa-satellite"></i>
+            <i class="fas fa-satellite"></i>
+            <i class="fas fa-satellite"></i>
+            <i class="fas fa-satellite"></i>
+            <i class="fas fa-satellite"></i>
+            </div>
+
+            <i class="fas fa-globe fa-5x"></i>
+
+        </div>
+        <p>
+            So you are good with numbers. :-) Now you can help me with these geostationary adjustments for my fancy satellites.
+            If all these <span id="hint" title="Not always small numbers."> relative adjustments </span> are correct, you should return to the starting position. For sending data, you can find the code in the JS file.
+        </p>
+    </div>
+
+    <div id="solution-field" class="text">
+
+        <form action="/ninth" method="post" datatype="text">
+            <label for="code">Solution: </label>
+            <input id="code" name="ninth">
+            <button>Submit</button>
+        </form>
+        {% if message != null %}
+            <p id="error-message">{{ message }}</p>
+        {% endif %}
+
+    </div>
+
+
+</body>
+</html>

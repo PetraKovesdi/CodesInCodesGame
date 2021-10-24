@@ -1,0 +1,97 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+  height: 100%;
+  background-color: black;
+  color: white;
+  background-image: url("IMG_ninth/donald-giannatti-Wj1D-qiOseE-unsplash.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+}
+
+h3 {
+  text-align: right;
+  background-color: rgba(255,255,255,0.2);
+  padding-right: 10%;
+
+}
+
+div#content-field {
+    font-size: 17px;
+    margin: 5px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 10px;
+    padding-left: 30px;
+    border-radius: 10px;
+    background-color: rgba(64, 65, 135, 0.2);
+}
+
+div#icons-field {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+
+div#satellites i {
+    position: relative;
+    color: #FFF;
+}
+
+div#satellites i:nth-child(1) {
+    transform: rotate(270deg);
+    right: 10px;
+    top: 10px;
+}
+
+div#satellites i:nth-child(2) {
+    left: 50px;
+    top: 10px;
+}
+
+div#satellites i:nth-child(3) {
+    transform: rotate(65deg);
+    left: 40px;
+    top: 70px;
+}
+
+div#satellites i:nth-child(4) {
+    transform: rotate(135deg);
+    right: 30px;
+    top: 110px;
+}
+
+div#satellites i:nth-child(5) {
+    transform: rotate(195deg);
+    right: 110px;
+    top: 70px;
+}
+
+
+div#solution-field {
+    margin: 20px;
+    min-height: 5%;
+    padding: 20px;
+}
+
+p#error-message {
+    color: white;
+    font-weight: bold;
+}
+
+span#hint {
+    font-style: italic;
+}
