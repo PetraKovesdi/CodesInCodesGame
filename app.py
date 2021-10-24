@@ -14,7 +14,8 @@ PAGEMAP = {
     "sixth": {"session": 6, "nextPage": "seventh", "code": util.HASHES["sixth"]},
     "seventh": {"session": 7, "nextPage": "eighth", "code": util.HASHES["seventh"]},
     "eighth": {"session": 8, "nextPage": "ninth", "code": util.HASHES["eighth"]},
-    "ninth": {"session": 9, "nextPage": "notcomplete", "code": ""},
+    "ninth": {"session": 9, "nextPage": "tenth", "code": util.HASHES["eighth"]},
+    "tenth": {"session": 10, "nextPage": "notComplete", "code": ""}
 }
 
 
@@ -68,16 +69,19 @@ def getData():
 
 @app.route("/ninth/api", methods=["POST"])
 def handleInput():
-    # if "reached" not in session or session["reached"] < PAGEMAP.get("ninth").get("session"):
-    #    return redirect("/")
 
+
+    if "reached" not in session or session["reached"] < PAGEMAP.get("ninth").get("session"):
+        return redirect("/")
+
+    steps = ["first", "second", "third", "fourth", "fifth"]
 
     try:
         currentStep = request.json.get("step").strip()
         startingPosition = request.json.get("position").strip()
         adjustment = request.json.get("adjustment").strip()
         validateInputForNinthPage(currentStep, startingPosition, adjustment)
-        nextPosition = calcNextPosition(currentStep, int(startingPosition), adjustment)
+        changedPosition = calcNextPosition(currentStep, int(startingPosition), adjustment)
     except TypeError:
         return jsonify({"error": "Not correct type."})
     except ValueError:
@@ -89,17 +93,29 @@ def handleInput():
     if "positionsSum" not in session or currentStep == "first":
         session["positionsSum"] = 0
 
-    session["positionsSum"] += nextPosition
+    session["positionsSum"] += changedPosition
+    nextStep = steps[(steps.index(currentStep) + 1) % len(steps)]
+
+    # After this was validated in validateInputForNinthPage, that correct step was sent
+    session["nextStep"] = nextStep
 
     # Reaching last step
     if currentStep == "fifth":
 
         if util.verify_code(str(session["positionsSum"]), util.gethashes("ninth")):
-            return jsonify({currentStep: nextPosition, "solution": session["positionsSum"]})
+            return jsonify({
+                "currentPosition": changedPosition,
+                "nextStep": nextStep,
+                "solution": session["positionsSum"]})
         else:
-            return jsonify({currentStep: nextPosition, "solution": "not correct"})
+            return jsonify({
+                "currentPosition": changedPosition,
+                "nextStep": nextStep,
+                "solution": "Not correct, current position should be the starting position."})
 
-    return jsonify({currentStep: nextPosition})
+    return jsonify({
+        "currentPosition": changedPosition,
+        "nextStep": nextStep})
 
 
 def validateInputForNinthPage(currentStep, startingPosition, adjustment):
@@ -112,6 +128,11 @@ def validateInputForNinthPage(currentStep, startingPosition, adjustment):
         raise TypeError
     if currentStep not in ["first", "second", "third", "fourth", "fifth"]:
         raise ValueError
+    if currentStep != "first" and "nextStep" not in session:
+        raise ValueError
+    if currentStep != "first" and currentStep != session["nextStep"]:
+        raise ValueError
+
 
 
 # adjustment handled as string for modifications for extracting actual number
