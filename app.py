@@ -152,6 +152,9 @@ def calcNextPosition(currentStep, startingPosition: int, adjustment: str):
     elif currentStep == "fourth":
         numberExtracted = int(adjustment) % 3
         nextPos = startingPosition * 3 + 999999999 * numberExtracted
+
+    # With slice method, adjustment[-2:] will not cause indexError if len(adjustment) < 2
+    
     elif currentStep == "fifth":
         numberExtracted = int(adjustment[-2:])
         nextPos = startingPosition - (numberExtracted + 21)
